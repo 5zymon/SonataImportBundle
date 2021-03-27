@@ -28,7 +28,7 @@ class DefaultController extends CRUDController {
         $fileEntity = new UploadFile();
         $form = $this->get('Doctrs\SonataImportBundle\Form\Type\UploadFileType');
         $form->setAdminClass($this->admin);
-        $form = $this->createForm($form, $fileEntity, [
+        $form = $this->createForm(UploadFileType::class, $fileEntity, [
             'method' => 'POST'
         ]);
         $form->handleRequest($request);
