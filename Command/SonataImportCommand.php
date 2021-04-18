@@ -223,7 +223,7 @@ class SonataImportCommand extends ContainerAwareCommand {
          * In case of a match, we get the value from the class specified in the config
          */
         foreach ($mappings as $item) {
-            if ($item['name'] === $type->getName()) {
+            if ($item['name'] === $type->getBlockPrefix()) {
                 if ($this->getContainer()->has($item['class']) && $this->getContainer()->get($item['class']) instanceof ImportInterface) {
                     /** @var ImportInterface $class */
 
